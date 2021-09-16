@@ -55,8 +55,8 @@ public class Hangman {
                 break;
             }
 
-            boolean isNotLetter = p.matcher(Character.toString(letter)).matches();
-            if (isNotLetter) {
+            boolean isLetter = p.matcher(Character.toString(letter)).matches();
+            if (isLetter) {
                 for (int o = 0; o < word.length(); o++) {
                     if (letter == word.charAt(o)) {
                         wordProgress = wordProgress.substring(0, o) + letter + wordProgress.substring(o + 1);
