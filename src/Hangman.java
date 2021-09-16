@@ -47,11 +47,12 @@ public class Hangman {
 
             if (letter2.length() > 1) {
                 if (letter2.equals(word)) {
-                    correctWord = true;
+                    System.out.println(word);
+                    System.out.println("The word is correct!");
                 } else {
                     health = 0;
-                    break;
                 }
+                break;
             }
 
             boolean isNotLetter = p.matcher(Character.toString(letter)).matches();
@@ -62,8 +63,10 @@ public class Hangman {
                         success++;
                     }
                     if (wordProgress.equals(word)) {
+                        System.out.println(word);
+                        System.out.println("The word is correct!");
                         correctWord = true;
-                        System.out.println("The word is correct");
+                        break;
                     }
                     if (o == word.length() - 1 && success == 0) {
                         System.out.println("The letter " + letter + " is not correct!");
